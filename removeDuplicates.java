@@ -1,4 +1,4 @@
-public ListNode deleteDuplicates(ListNode head) {
+public ListNode deleteDuplicates(ListNode head) { // O(N)
         if(head==null)
             return head;
         ListNode a = head;
