@@ -6,6 +6,4 @@ public static void wiggleSort(int[] arr) { // O(N) | O(1)
                 arr[i-1] = temp;
             }
         }
-    
-  }
-    }
+}
