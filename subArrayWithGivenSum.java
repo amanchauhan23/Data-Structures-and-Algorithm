@@ -1,4 +1,4 @@
-public class sumArrayWithGivenSum {
+public class subArrayWithGivenSum {
     static ArrayList<Integer> subarraySum(int[] arr, int n, int s) {
         ArrayList<Integer> ls = new ArrayList<Integer>();
         int l = 0;
