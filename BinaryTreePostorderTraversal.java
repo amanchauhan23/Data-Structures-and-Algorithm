@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // dfs
     List<Integer> ls = new ArrayList<Integer>();
     public List<Integer> postorderTraversal(TreeNode root) {
         traversal(root);
