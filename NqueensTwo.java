@@ -1,4 +1,4 @@
-class Solution {
+class Solution { //backtracking
     private int ans = 0;
 
     public void backTracking(int n, int r, HashSet<Integer> col, HashSet<Integer> posDiagonal,
