@@ -4,18 +4,19 @@ class Solution {
         Stack<Integer> s = new Stack<>();
         HashMap<Integer, Integer> hm = new HashMap<>();
 
-        for (int i = nums2.length - 1; i >= 0; i--) {
-            if (s.isEmpty()) {
-                hm.put(nums2[i], -1);
-            } else {
-                while (!s.isEmpty() && s.peek() <= nums2[i])
+       for(int i = nums2.length-1; i >= 0; i--){
+            
+                while(!s.isEmpty() && s.peek() <= nums2[i]){
                     s.pop();
-
-                if (s.isEmpty())
-                    hm.put(nums2[i], -1);
-                else
+                }
+               
+                if(s.isEmpty()){
+                     hm.put(nums2[i], -1);
+                }
+                else{
                     hm.put(nums2[i], s.peek());
-            }
+                }
+
             s.push(nums2[i]);
         }
 
