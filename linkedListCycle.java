@@ -15,7 +15,7 @@ public class Solution {
         ListNode slow = head;
         ListNode fast = head;
         
-        while(fast != null && fast.next != null){
+        while(fast != null && fast.next != null){ // floyd's cycle detection
             slow = slow.next;
             fast = fast.next.next;
             if(fast == slow)
