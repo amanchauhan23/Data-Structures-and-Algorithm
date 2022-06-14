@@ -29,7 +29,7 @@ public class Solution {
         
         slow = head;
         
-        while(slow != fast){
+        while(slow != fast){ // iterating with same speed
             slow = slow.next;
             fast = fast.next;
         }
