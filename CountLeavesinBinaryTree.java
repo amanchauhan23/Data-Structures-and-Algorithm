@@ -1,6 +1,5 @@
 class Tree
 {
-    int c = 0;
     int countLeaves(Node node) 
     {
          if(node == null){
