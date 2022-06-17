@@ -13,8 +13,10 @@
  *     }
  * }
  */
+
+// #1
 class Solution {
-    public TreeNode insertIntoBST(TreeNode root, int val) { // O(n) | O(h)
+    public TreeNode insertIntoBST(TreeNode root, int val) { // iterative | O(h) | O(1)
         if(root == null){
             return new TreeNode(val);
         }
@@ -38,5 +40,20 @@ class Solution {
             }
         }
         return head;
+    }
+}
+
+// #2
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) { // recursive | O(h) | O(h)
+        if(root == null){
+            return new TreeNode(val);
+        }
+        if(root.val > val){
+            root.left = insertIntoBST(root.left, val);
+        }else{
+            root.right = insertIntoBST(root.right, val);
+        }
+        return root;
     }
 }
