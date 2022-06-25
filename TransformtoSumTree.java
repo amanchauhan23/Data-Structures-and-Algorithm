@@ -1,5 +1,5 @@
 class Solution{
-    public void toSumTree(Node root){
+    public void toSumTree(Node root){ // O(n)
          //add code here.
          findSum(root);
     }
