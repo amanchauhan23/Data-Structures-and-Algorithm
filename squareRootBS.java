@@ -1,4 +1,4 @@
-public class squareRootBS { // O(logn) | O(1) | return abs if perfect sqr doesnt exist
+public class squareRootBS { // O(logn) | O(1) | return abs if perfect sqr isn't there
     int find(int n) {
 
         if (n < 0)
