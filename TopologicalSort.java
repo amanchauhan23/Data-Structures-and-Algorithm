@@ -1,3 +1,4 @@
+// Kahn's Algorithm || BFS based
 class Solution
 {
     //Function to return list containing vertices in Topological order. 
