@@ -1,5 +1,5 @@
 class Solution {
-    // Function to return Breadth First Traversal of given graph
+    // Breadth First Traversal of given graph
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) { // O(V + E) | O(V)
         
         int src = 0;
