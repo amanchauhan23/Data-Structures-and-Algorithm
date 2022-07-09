@@ -24,7 +24,7 @@ class Gfg {
             fin[node] = true;
             for(int i = 0; i < V; i++){  // Relaxing nodes
                 if(graph[node][i] != 0 && fin[i] == false){
-                    dist[i] = Math.min(dist[i], graph[node][i] + weight); // finding optimal dist
+                    dist[i] = Math.min(dist[i], graph[node][i] + weight); // finding optimal min dist
                     pq.add(new int[]{graph[node][i] + weight, i}); 
                 }
             }
