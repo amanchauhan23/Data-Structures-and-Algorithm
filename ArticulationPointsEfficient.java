@@ -50,12 +50,12 @@ public class ArticulationPointEfficient {
             if (visited[u] == 0) {
                 child++;
                 dfs(visited, low, disc, articulations, time, u, node);
-                low[node] = Math.min(low[node], low[u]);
+                low[node] = Math.min(low[node], low[u]); 
 
                 if (low[u] >= disc[node] && parent != -1)
                     articulations[node] = 1;
             } else {
-                low[node] = Math.min(low[node], disc[u]);
+                low[node] = Math.min(low[node], disc[u]); // we need to go to, lowest possible node, only using one back-edge, that is why we consider disc[u], rather than low[u]
             }
         }
         if (parent == -1 && child > 1) { // for root
