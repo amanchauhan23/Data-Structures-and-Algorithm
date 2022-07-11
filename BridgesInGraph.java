@@ -5,7 +5,6 @@ public class BridgesInGraph {
 
     private LinkedList<Integer> adj[];
     int time = 0;
-    static final int NIL = -1;
 
     BridgesInGraph(int v) {
         V = v;
@@ -56,7 +55,7 @@ public class BridgesInGraph {
                     }
                 }
             }
-            low[node] = Math.min(low[node], disc[v]);
+            low[node] = Math.min(low[node], disc[v]); // we need to go to, lowest possible node, only using one back-edge, that is why we consider disc[v], rather than low[v]
         }
     }
 
