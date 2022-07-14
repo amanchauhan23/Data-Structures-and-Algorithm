@@ -43,3 +43,20 @@ class Solution {
 
 
 // #3 Tabulation || Bottom-up
+class Solution {
+    public int change(int amount, int[] coins) {
+        int [][] tab = new int[amount + 1][coins.length + 1];
+        
+        for(int i = 0; i < tab[0].length; i++)
+            tab[0][i] = 1;
+        
+        for(int i = 1; i < tab.length; i++){
+            for(int j = 1; j < tab[0].length; j++){
+                tab[i][j] = tab[i][j - 1];
+                if(i >= coins[j - 1])
+                    tab[i][j] += tab[i - coins[j - 1]][j];
+            }
+        }
+        return tab[amount][coins.length];
+    }
+}
