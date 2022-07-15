@@ -42,7 +42,7 @@ class Solution {
 }
 
 
-// #3 Tabulation || Bottom-up
+// #3 Tabulation || Bottom-up O(mn) | O(mn)
 class Solution {
     public int change(int amount, int[] coins) {
         int [][] tab = new int[amount + 1][coins.length + 1];
