@@ -17,8 +17,8 @@ class Solution {
     }
 }
 
-// #2
-// class Solution {
+// #2 || O(n) | O(h)
+// class Solution { 
 //     static int count = 0;
 //     int ans = -1;
 //     public int kthSmallest(TreeNode root, int k) { // recursive | O(n) | O(h) 
