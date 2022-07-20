@@ -1,6 +1,6 @@
 class Solution
 {
-	public int maxSumIS(int arr[], int n)  // O(n^2) | O(n)
+	public int maxSumIS(int arr[], int n)  // O(n^2) | O(n) // see LIS for similarities
 	{ 
 	    int msis[] = new int[n];
 	    for(int i = 0; i < n; i++){
