@@ -57,3 +57,25 @@ public int longestCommonSubsequence(String text1, String text2) {
         }
         return tab[m][n];
     }
+
+// #4 Space optimized || O(mn) || O(n)
+class Solution {
+    public int longestCommonSubsequence(String text1, String text2) {
+     
+        int m = text1.length(), n = text2.length();
+        int tab[][] = new int[2][n+1];
+        
+        int in = 0;
+        for(int i = 1; i <= m; i++){
+            in = i & 1;
+            for(int j = 1; j <= n; j++){
+                if(text1.charAt(i - 1) == text2.charAt(j - 1)){
+                    tab[in][j] = tab[1 - in][j - 1] + 1;
+                }else{
+                    tab[in][j] = Math.max(tab[1 - in][j], tab[in][j - 1]);
+                }
+            }
+        }
+        return tab[in][n];
+    }
+}
