@@ -50,7 +50,24 @@ class Solution {
 }
 
 // #3 Tabulation
-
+class Solution {
+    public int superEggDrop(int k, int n) {
+        int dp[][] = new int[n+1][k+1];
+        for(int i = 0; i <= k; i++)
+            dp[1][i] = 1;
+        for(int i = 1; i <= n; i++)
+            dp[i][1] = i;
+        
+        for(int i = 2; i <= n; i++)
+                for(int j = 2; j <= k; j++){
+                    dp[i][j] = Integer.MAX_VALUE;
+                    for(int x = 1; x <= i; x++)
+                        dp[i][j] = Math.min(dp[i][j], 1 + Math.max(dp[x-1][j-1], dp[i-x][j])); 
+                }
+                    
+        return dp[n][k];
+    }
+}
 
 // #4 optimized binary search + memo ||| Accepted
 class Solution { // O(k*NlogN) || O(kN)
@@ -91,5 +108,20 @@ class Solution { // O(k*NlogN) || O(kN)
         }
         memo[k][n] = ans;
         return memo[k][n];
+    }
+}
+
+// #5 || given dp[moves][eggs] = how many max floors can we check || O(nk) | O(nk)
+class Solution {
+    public int superEggDrop(int k, int n) {
+        int dp[][] = new int[n+1][k+1];
+        int m = 0;
+        
+        while(dp[m][k] < n){
+            m++;
+            for(int i = 1; i <= k; i++)
+                dp[m][i] = 1 + dp[m-1][i-1] + dp[m-1][i];
+        }
+        return m;
     }
 }
