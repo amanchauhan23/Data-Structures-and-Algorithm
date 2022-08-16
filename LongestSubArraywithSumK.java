@@ -1,5 +1,5 @@
 class LongestSubArraywithSumK {
-    public static int lenOfLongSubarr(int A[], int N, int k) { // O(n) | O(n)
+    public static int lenOfLongSubarr(int A[], int N, int k) { // O(n) | auxSpace O(n)
 
         HashMap<Integer, Integer> hm = new HashMap<>();
         hm.put(0, -1);
