@@ -1,5 +1,5 @@
 class Solution {
-    public int[] nextGreaterElement(int[] nums1, int[] nums2) { // O(n + m) | O(m)
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) { // O(n + m) || aux space O(m)
 
         Stack<Integer> s = new Stack<>();
         HashMap<Integer, Integer> hm = new HashMap<>();
