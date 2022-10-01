@@ -12,7 +12,7 @@ class Solution
     static int partition(int arr[], int low, int high)
     {
         int left = low - 1;
-        int pivot = arr[high];
+        int pivot = arr[high]; // last element as pivot
         for(int i = low; i < high; i++){
             if(arr[i] < pivot){
                 left++;
