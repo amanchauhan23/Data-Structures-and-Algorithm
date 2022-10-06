@@ -18,7 +18,8 @@ class Node {
 }
 */
 
-class Solution {
+// #1 BFS
+class Solution { 
     public Node cloneGraph(Node node) { // O(V + E) || O(V)
 
         if(node == null) return null;
@@ -42,5 +43,23 @@ class Solution {
         }
 
         return hm.get(node);
+    }
+}
+
+// #2 DFS
+class Solution { 
+    HashMap<Node, Node> hm = new HashMap<>();
+    public Node cloneGraph(Node node) {
+        if(node == null) return null;
+
+        if(hm.containsKey(node)) return hm.get(node);
+
+        Node cloneNode = new Node(node.val);
+        hm.put(node, cloneNode);
+
+        for(Node n : node.neighbors)
+            hm.get(node).neighbors.add(cloneGraph(n));
+
+        return cloneNode;
     }
 }
