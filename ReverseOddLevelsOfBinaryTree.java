@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    public TreeNode reverseOddLevels(TreeNode root) {
+    public TreeNode reverseOddLevels(TreeNode root) { // O(n) || O(n)
 
         if(root == null) return null;
 
