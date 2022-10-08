@@ -17,7 +17,7 @@ class Node {
 };
 */
 
-class Solution { // O(n) || O(1)
+class Solution { // O(n) || O(h)
     int max = 0;
     public int maxDepth(Node root) {
         if(root == null) return 0;
