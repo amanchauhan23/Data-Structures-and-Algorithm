@@ -1,8 +1,7 @@
 // #1 O(n2m) || O(n)
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> set = new HashSet<>();
-        for(String s : wordList) set.add(s);
+        HashSet<String> set = new HashSet<>(wordList);
         if(!set.contains(endWord)) return 0;
 
         Queue<String> q = new LinkedList<>();
