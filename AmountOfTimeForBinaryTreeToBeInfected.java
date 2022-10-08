@@ -1,3 +1,4 @@
+// #1 
 // O(n^2) || O(n^2) || creating adj list for undirected Graph, after getting the max(element) in tree
 class Solution {
 
@@ -63,4 +64,38 @@ class Solution {
         maxVAL(root.left);
         maxVAL(root.right);
     }
+}
+
+// #2
+// Storing the parent,and finding max from left, right, and parent
+class Solution {
+
+    HashMap<TreeNode, TreeNode> hm;
+    TreeNode src = null;
+    HashSet<TreeNode> visit;
+    public int amountOfTime(TreeNode root, int start) {
+        if(root == null) return 0;
+        hm = new HashMap<>();
+        visit = new HashSet<>();
+        hm.put(root, null);
+        dfsParent(root, start);
+        System.out.println(src.val);
+        return dfsDist(src) - 1;
+    }
+
+    private int dfsDist(TreeNode root){
+        if(root == null || visit.contains(root)) return 0;
+        visit.add(root);
+        return Math.max(dfsDist(root.left), Math.max(dfsDist(root.right), dfsDist(hm.get(root)))) + 1;
+    }
+
+    private void dfsParent(TreeNode root, int start){
+        if(root == null) return;
+        if(start == root.val) src = root;
+        if(root.left != null) hm.put(root.left, root);
+        if(root.right != null) hm.put(root.right, root);
+        dfsParent(root.left, start);
+        dfsParent(root.right, start);
+    }
+
 }
