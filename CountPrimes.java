@@ -1,4 +1,4 @@
-// #1 || O(n log log n) || O(n)
+// #1 || O(n log log n) || O(n) || Sieve Of Eratosthenes 
 class Solution {
     public int countPrimes(int n) {
         if(n < 2) return 0;
