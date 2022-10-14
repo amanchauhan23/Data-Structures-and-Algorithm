@@ -20,3 +20,25 @@ class Solution {
         return water;
     }
 }
+
+// O(n) || O(1)
+class Solution {
+    public int trap(int[] arr) {
+
+        int n = arr.length;
+        int left = 0, right = n-1;
+        int lmax = arr[0], rmax = arr[n-1], water = 0;
+
+        while(left < right){
+            if(lmax < rmax){
+                water += lmax - arr[left++];
+                lmax = Math.max(lmax, arr[left]);
+            }else{
+                water += rmax - arr[right--];
+                rmax = Math.max(rmax, arr[right]);
+            }
+        }
+
+        return water;
+    }
+}
