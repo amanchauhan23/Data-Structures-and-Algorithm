@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // Using binary Search
     public long[] sumOfThree(long num) { // O(logn)
         long start = -1;
         long end = num/3;
