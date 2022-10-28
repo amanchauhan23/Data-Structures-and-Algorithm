@@ -37,3 +37,42 @@ class TimeMap { // O(timestamp) || O(1)
  * obj.set(key,value,timestamp);
  * String param_2 = obj.get(key,timestamp);
  */
+
+// #2 Optimized
+class TimeMap {
+    static HashMap<String, ArrayList<Pair<Integer, String>>> hm;
+    public TimeMap() {
+        hm = new HashMap<>();
+    }
+    
+    public void set(String key, String value, int timestamp) {
+        if(!hm.containsKey(key))
+            hm.put(key, new ArrayList<Pair<Integer, String>>());
+        hm.get(key).add(new Pair(timestamp, value));
+    }
+    
+    public String get(String key, int timestamp) {
+        if(hm.get(key) == null) return "";
+        int left = 0; 
+        int right = hm.get(key).size() - 1;
+        ArrayList<Pair<Integer, String>> temp = hm.get(key);
+        while(left <= right){
+            int mid = left + (right - left)/2;
+            if(temp.get(mid).getKey() == timestamp) return temp.get(mid).getValue();
+            if(temp.get(mid).getKey() < timestamp){
+                left = mid + 1;
+            }else{
+                right = mid - 1;
+            }
+        }
+        if(right < 0) return "";
+        return temp.get(right).getValue();
+    }
+}
+
+/**
+ * Your TimeMap object will be instantiated and called as such:
+ * TimeMap obj = new TimeMap();
+ * obj.set(key,value,timestamp);
+ * String param_2 = obj.get(key,timestamp);
+ */
