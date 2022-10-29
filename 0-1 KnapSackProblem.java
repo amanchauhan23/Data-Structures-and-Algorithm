@@ -41,7 +41,7 @@ class Solution // O(W*n) || O(W*n)
     
 }
 
-// #3 Tabulation 
+// #3 Tabulation || optimized
 class Solution // O(W*n) || O(W*n)
 { 
     static int knapSack(int W, int wt[], int val[], int n) 
